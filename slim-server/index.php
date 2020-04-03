@@ -13,13 +13,26 @@ $app->add(new TrailingSlash(false)); // remove trailing slashes
 // GET /
 $app->get('/', function (Request $request, Response $response, array $args) {
     // TODO serve the html for the react app instead of "Hello world!"
-    $response->getBody()->write("Hello world!");
+    $response->getBody()->write(file_get_contents('../client/build/index.html'));
+
     return $response;
 });
 
 // GET /cards
+$app->get('/', function (Request $request, Response $response, array $args) {
+    // TODO serve the html for the react app instead of "Hello world!"
+    $response->getBody()->write(file_get_contents('../client/build/index.html'));
+
+    return $response;
+});
 
 // GET /cards/{id}
+$app->get('/:id', function (Request $request, Response $response, array $args) {
+    // TODO serve the html for the react app instead of "Hello world!"
+    $response->getBody()->write(file_get_contents('../client/build/index.html'));
+
+    return $response;
+});
 
 // POST /cards
 
